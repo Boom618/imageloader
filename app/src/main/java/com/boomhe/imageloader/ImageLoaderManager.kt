@@ -10,6 +10,8 @@ class ImageLoaderManager: IImageLoaderstrategy {
 
     constructor()
 
+    var loaderstrategy: IImageLoaderstrategy? = null
+
     private var INSTANCE: ImageLoaderManager = ImageLoaderManager()
 
     fun getInstance(): ImageLoaderManager{
@@ -24,14 +26,17 @@ class ImageLoaderManager: IImageLoaderstrategy {
     }
 
     override fun init(context: Context) {
+        loaderstrategy!!.init(context)
 
     }
 
     override fun showImage(options: ImageLoaderOptions) {
+        loaderstrategy?.showImage(options)
 
     }
 
     override fun cleanMemory(context: Context) {
+        loaderstrategy!!.cleanMemory(context)
 
     }
 }
