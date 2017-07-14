@@ -16,9 +16,9 @@ public class ExampleUnitTest {
         // 给定一个整数数组，返回两个数字的索引，使它们相加到一个特定的目标。
         int[] temp = {1,3,4,5,7,8};
 
-        int[] ints = twoSum(temp, 12);
-        System.out.println("目标数字111" + ints[0]);
-        System.out.println("目标数字222" + ints[1]);
+        int[] ints = twoSum(temp, 17);
+        System.out.println("目标数字 ints[0] = " + ints[0]);
+        System.out.println("目标数字 ints[1] = " + ints[1]);
     }
 
 
@@ -34,6 +34,8 @@ public class ExampleUnitTest {
                     temp[0] = temp[i];
                     temp[1] = temp[j + 1];
                     return temp;
+                }else{
+                    System.out.println("没有找到目标数字");
                 }
             }
         }

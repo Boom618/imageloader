@@ -42,6 +42,7 @@ class FrescoImageLoader : IImageLoaderstrategy {
     }
 
     override fun cleanMemory(context: Context) {
+        Fresco.getImagePipeline().clearMemoryCaches()
     }
 
     fun getPipelineConfig(context: Context): ImagePipelineConfig {
@@ -67,7 +68,7 @@ class FrescoImageLoader : IImageLoaderstrategy {
         var drawee: SimpleDraweeView? = null
         var clazz = null as Class<*>
         var hierarchy: GenericDraweeHierarchy? = null
-        val hierarchyBuilder = GenericDraweeHierarchyBuilder.newInstance(view!!.context.resources)
+        var hierarchyBuilder = GenericDraweeHierarchyBuilder.newInstance(view!!.context.resources)
         if (view is SimpleDraweeView) {
             drawee = view
             hierarchy = drawee.hierarchy

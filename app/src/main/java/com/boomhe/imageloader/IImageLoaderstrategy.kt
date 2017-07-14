@@ -4,7 +4,7 @@ import android.content.Context
 
 /**
  * Created by boomhe on 2017/7/12.
- * 加载图片 策略接口
+ * 加载图片 策略 接口
  */
 interface IImageLoaderstrategy {
 

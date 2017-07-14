@@ -17,7 +17,8 @@ class ImageLoaderOptions {
     var imageSize: ImageSize? = null        // 设置图片的大小
     var errorDrawable: Int? = null          // 是否展示加载错误的图片
     var asGif: Boolean = false              // 是否作为gif展示
-    var isCrossFade: Boolean = true         // 是否渐变平滑的显示图片,默认为true
+    var isCrossFade: Boolean = true         // 是否渐变平滑的显示图片,默认为 true
+    var isSkipMemoryCache: Boolean = false  // 是否跳过内存缓存 默认为 false
     var blurImage: Boolean = false          // 是否使用高斯模糊
     var target = null as BaseTarget<*>      // target
     var mDiskCacheStrategy: DiskCacheStrategy = DiskCacheStrategy.DEFAULT  //磁盘缓存策略
@@ -53,8 +54,8 @@ class ImageLoaderOptions {
 
 
     class ImageSize(width: Int,height: Int){
-        var width = 0
-        var height = 0
+        var width = width
+        var height = height
 
     }
 
