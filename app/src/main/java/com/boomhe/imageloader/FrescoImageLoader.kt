@@ -86,9 +86,9 @@ class FrescoImageLoader : IImageLoaderstrategy {
                 uri = Uri.parse("fill://" + options.url)
             }
 
-            if (options.holderDrawable != -1) {
+            if (options.holderDrawable != null) {
                 val holderDrawable = options.holderDrawable
-                hierarchyBuilder.placeholderImage
+                hierarchyBuilder.placeholderImage = holderDrawable
             }
 
             if (hierarchy == null) {

@@ -1,5 +1,6 @@
 package com.boomhe.imageloader
 
+import android.graphics.drawable.Drawable
 import android.view.View
 import com.bumptech.glide.request.target.BaseTarget
 
@@ -13,9 +14,9 @@ class ImageLoaderOptions {
     var viewContainer: View? = null         // 图片容器
     var url: String = ""                    // 图片地址
     var resource: Integer? = null           // 图片地址
-    var holderDrawable: Int? = null         // 设置展位图
+    var holderDrawable: Drawable? = null    // 设置展位图
     var imageSize: ImageSize? = null        // 设置图片的大小
-    var errorDrawable: Int? = null          // 是否展示加载错误的图片
+    var errorDrawable: Drawable? = null          // 是否展示加载错误的图片
     var asGif: Boolean = false              // 是否作为gif展示
     var isCrossFade: Boolean = true         // 是否渐变平滑的显示图片,默认为 true
     var isSkipMemoryCache: Boolean = false  // 是否跳过内存缓存 默认为 false
@@ -32,6 +33,7 @@ class ImageLoaderOptions {
         this.errorDrawable = builder.errorDrawable
         this.asGif = builder.asGif
         this.isCrossFade = builder.isCrossFade
+        this.isSkipMemoryCache = builder.isSkipMemoryCache
         this.blurImage = builder.blurImage
         this.target = builder.target
         this.mDiskCacheStrategy = builder.mDiskCacheStrategy
@@ -41,11 +43,12 @@ class ImageLoaderOptions {
         var viewContainer: View? = null         // 图片容器
         var url: String = ""                    // 图片地址
         var resource: Integer? = null           // 图片地址
-        var holderDrawable: Int? = null         // 设置展位图
+        var holderDrawable: Drawable? = null         // 设置展位图
         var imageSize: ImageSize? = null        // 设置图片的大小
-        var errorDrawable: Int? = null          // 是否展示加载错误的图片
+        var errorDrawable: Drawable? = null          // 是否展示加载错误的图片
         var asGif: Boolean = false              // 是否作为gif展示
         var isCrossFade: Boolean = true         // 是否渐变平滑的显示图片,默认为true
+        var isSkipMemoryCache: Boolean = false  // 是否跳过内存缓存 默认为 false
         var blurImage: Boolean = false          // 是否使用高斯模糊
         var target = null as BaseTarget<*>      // target
         var mDiskCacheStrategy: DiskCacheStrategy = DiskCacheStrategy.DEFAULT  //磁盘缓存策略
