@@ -59,7 +59,7 @@ class GlideImageLoader : IImageLoaderstrategy {
             if (options.isCrossFade) {
                 requestBuilder.crossFade()
             }else if ( options.asGif){
-                builder = requestBuilder.asGif()
+                builder = requestBuilder.asGif()!!
             }
         }
         builder.skipMemoryCache(options.isSkipMemoryCache)
