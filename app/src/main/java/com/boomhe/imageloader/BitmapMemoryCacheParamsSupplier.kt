@@ -22,13 +22,15 @@ class BitmapMemoryCacheParamsSupplier : Supplier<MemoryCacheParams> {
     private val mActivityManager: ActivityManager? = null
 
     override fun get(): MemoryCacheParams {
+        val runtime = Runtime.getRuntime()
+        val max = (runtime.maxMemory() / 8) as Int
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
 
-            val params = MemoryCacheParams(1,MAX_CACHE_ENTRIES,
+            val params = MemoryCacheParams(max,MAX_CACHE_ENTRIES,
                     MAX_CACHE_EVICTION_SIZE, MAX_CACHE_EVICTION_ENTRIES, 1)
             return params
         }else{
-            val params = MemoryCacheParams(1, MAX_CACHE_ASHM_ENTRIES,
+            val params = MemoryCacheParams(max, MAX_CACHE_ASHM_ENTRIES,
                     Integer.MAX_VALUE,
                     Integer.MAX_VALUE,
                     Integer.MAX_VALUE)
